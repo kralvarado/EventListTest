@@ -20,14 +20,30 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            debuggable = true
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    flavorDimensions "buildtype"
+    productFlavors {
+        build_a {
+            dimension "buildtype"
+            versionNameSuffix "-A"
+        }
+        build_b {
+            dimension "buildtype"
+            versionNameSuffix "-B"
+        }
+    }
 }
 
 dependencies {
+    implementation files('libs/gson-2.8.6.jar')
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
