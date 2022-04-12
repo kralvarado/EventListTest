@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">EventListTest</string>
-    <string name="app_build_type">Build B</string>
 </resources>
